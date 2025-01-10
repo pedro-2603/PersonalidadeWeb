@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ariana Grande - Cantora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Adicionando Font Awesome -->
+    <style>
+        /* Resetando o estilo padrão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f3f3f3;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff5f8a; /* Cor rosa suave */
+            color: rgb(255, 251, 251);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header .logo h1 {
+            font-size: 3rem;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 15px;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(218, 128, 128);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00; /* Amarelo para hover */
+        }
+
+        /* Seções */
+        .section {
+            padding: 60px 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Biografia */
+        #biografia {
+            padding: 40px 20px;
+            background-color:#f6d2dc;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #biografia .biografia-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #biografia .biografia-texto {
+            flex: 1;
+            margin-right: 20px;
+            padding: 20px;
+            text-align: justify;
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        #biografia .biografia-imagem {
+            flex: 1;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        #biografia .biografia-imagem img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Box model - Ajuste do container */
+        .biografia-texto p {
+            margin-bottom: 20px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #biografia .biografia-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #biografia .biografia-texto {
+                margin-right: 0;
+                text-align: center;
+            }
+
+            #biografia .biografia-imagem {
+                margin-top: 20px;
+                max-width: 350px;
+            }
+        }
+
+        /* Grid Layout para a Discografia */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        .album {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .album img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .album p {
+            padding: 15px;
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .album:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .album img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Curiosidades */
+        ul {
+            list-style: none;
+            margin-top: 30px;
+            padding: 0;
+            font-size: 1.1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+
+        ul li {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #555;
+        }
+
+        ul li:hover {
+            transform: translateX(10px);
+            background-color: #ff5f8a;
+            color: #fff;
+        }
+
+        ul li i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #ff5f8a;
+        }
+
+        ul li:hover i {
+            color: #fff;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 1rem;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        header {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header .logo h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header .logo h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <h1>Ariana Grande</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#biografia">Biografia</a></li>
+                <li><a href="#discografia">Discografia</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Biografia -->
+    <section id="biografia">
+        <h2>Biografia</h2>
+        <div class="biografia-container">
+            <div class="biografia-texto">
+                <p>Ariana Grande é uma cantora, atriz e compositora americana, conhecida por sua voz poderosa e técnica vocal impressionante. Ela nasceu em 26 de junho de 1993, em Boca Raton, Flórida. Ariana começou sua carreira como atriz no teatro e na televisão, mas foi no mundo da música que ela encontrou seu verdadeiro sucesso. Seu primeiro álbum, *Yours Truly*, foi lançado em 2013 e rapidamente se tornou um sucesso comercial, incluindo o hit “The Way”, que ficou entre os 10 mais vendidos nos Estados Unidos.</p>
+                <p>Ao longo de sua carreira, Ariana tornou-se uma das artistas mais influentes da música pop contemporânea, com uma impressionante habilidade vocal e um estilo único que mistura R&B, pop e música eletrônica. Ela foi indicada a vários prêmios, incluindo Grammy Awards, e tem uma base de fãs apaixonada conhecida como "Arianators". Além de sua carreira musical, Ariana também se envolveu com causas sociais, defendendo temas como igualdade de gênero, direitos das mulheres e o combate ao bullying.</p>
+                <p>Ariana também é conhecida por sua capacidade de se reinventar. Cada novo álbum traz uma nova era em sua carreira, explorando diferentes estilos musicais e estéticos. Com sucessos como "Problem", "Bang Bang", "Into You" e "Thank U, Next", Ariana solidificou sua posição como uma das maiores artistas da atualidade.</p>
+            </div>
+            <div class="biografia-imagem">
+                <img src="img/ariana-grande-mac-viva-glam-batom.jpg" alt="Ariana Grande">
+            </div>
+        </div>
+    </section>
+
+    <section id="discografia" class="section">
+        <h2>Discografia</h2>
+        <div class="grid">
+            <div class="album">
+                <img src="img/ariana4.jpg" alt="Album 1">
+                <p><a href="https://open.spotify.com/intl-pt/album/5xSvNPstcxHtR4ap2vvN8A?autoplay=true">Album 1 - Yours Truly (2013)</a></p>
+            </div>
+            <div class="album">
+                <img src="img/ariana5.jpg" alt="Album 2">
+                <p><a href="https://open.spotify.com/intl-pt/album/6EVYTRG1drKdO8OnIQBeEj?autoplay=true">Album 2 - My Everything (2014)</a></p>
+            </div>
+            <div class="album">
+                <img src="img/ariana3.jpg" alt="Album 3">
+                <p><a href="https://open.spotify.com/intl-pt/album/5X7x18kW3mVIvnuNeedM6b?autoplay=true">Album 3 - Dangerous Woman (2016)</a></p>
+            </div>
+            <div class="album">
+                <img src="img/ariana2.jpg" alt="Album 4">
+                <p><a href="https://open.spotify.com/intl-pt/track/70khXICDeTTxgYtw3EysKH">Album 4 - Sweetener (2018)</a></p>
+            </div>
+            <div class="album">
+                <img src="img/ariana1.jpg" alt="Album 5">
+                <p><a href="https://open.spotify.com/intl-pt/track/3e9HZxeyfWwjeyPAMmWSSQ">Album 5 - Thank U, Next (2019)</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="curiosidades" class="section">
+        <h2>Curiosidades</h2>
+        <div class="curiosidades-container">
+            <ul>
+                <li><i class="fas fa-music"></i> Ela começou sua carreira na Broadway e depois foi para a televisão.</li>
+                <li><i class="fas fa-volume-up"></i> Ariana Grande tem uma das maiores vozes do pop contemporâneo, conhecida por seu alcance vocal impressionante.</li>
+                <li><i class="fas fa-genderless"></i> Ela é uma defensora ativa dos direitos das mulheres e luta contra o bullying e o preconceito.</li>
+                <li><i class="fas fa-users"></i> Além de cantora, Ariana tem uma grande influência nas redes sociais, com milhões de seguidores no Instagram e Twitter.</li>
+                <li><i class="fas fa-cogs"></i> Ela tem um estilo único que mistura influências de décadas passadas com toques modernos, o que a torna uma ícone de moda.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por [Pedro Lucas]</p>
+    </footer>
+
+</body>
+</html>
